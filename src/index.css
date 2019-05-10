@@ -25,6 +25,7 @@ html,body {
   height:100%;
   text-align: center;
   display:block;
+  padding:20px 0;
 }
 .box-wrap{
   margin:0 auto;
@@ -40,14 +41,28 @@ html,body {
   align-items: center;
   justify-content: center;
   border:1px solid #ddd;
-}
-.box:after{
-  display:block;
   font-size:50px;
 }
-.box.o:after{
-  content:'O';
+.popup-wrap{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.5);
 }
-.box.x:after{
-  content:'X';
+.popup-state{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:300px;
+  padding:30px;
+  background-image:url(https://media3.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#fff;
+  font-size:30px;
+  text-align: center;
 }
