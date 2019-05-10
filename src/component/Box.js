@@ -3,16 +3,9 @@ import React, { Component } from 'react';
 class Box extends Component{
     constructor(props){
         super(props);
-        
-    }
-    state = {}
-    componentWillUpdate(){
-
+        this.state = {}
     }
 
-    componentDidUpdate(){
-
-    }
     componentDidMount() {
         this.setState({
             idx : this.props.box.idx,
