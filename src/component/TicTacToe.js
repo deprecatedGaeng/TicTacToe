@@ -37,11 +37,7 @@ class TicTacToe extends Component{
             winner : undefined
         }
     }
-    componentDidUpdate(){
-    }
-    componentWillUpdate(){
 
-    }
     reset = () => {
         this.setState({
             boxes : [
