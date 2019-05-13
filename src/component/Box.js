@@ -12,10 +12,6 @@ class Box extends Component{
             checked : this.props.box.checked
         })
     }
-    
-    componentDidUpdate(){
-        console.log(this.props.box)
-    }
 
     componentWillReceiveProps(){
         this.setState({

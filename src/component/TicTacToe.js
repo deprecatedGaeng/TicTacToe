@@ -90,22 +90,22 @@ class TicTacToe extends Component{
     }
 
     checkWinner = () => {
-        this.state.winCoundition.some(condition => {
+        this.state.winCoundition.forEach(condition => {
             if(
                 this.state.gameState[condition[0]] === this.state.turn &&
                 this.state.gameState[condition[1]] === this.state.turn &&
                 this.state.gameState[condition[2]] === this.state.turn
             ){
-                this.setState({
+                /*this.setState({
                     winner : this.state.turn
-                })
-                return this.state.turn
+                })*/
+                this.state.winner = this.state.turn
             }else{
-                if(this.state.clickCount === 9){
-                    this.setState({
+                if(this.state.clickCount === 9 && !this.state.winner){
+                    this.state.winner = 'DRAW'
+                    /*this.setState({
                         winner : 'DRAW'
-                    })
-                    return 'draw'
+                    })*/
                 }
             }
         })
