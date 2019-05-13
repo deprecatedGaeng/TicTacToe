@@ -6,24 +6,6 @@ class TicTacToe extends Component{
     constructor(props){
         super(props);
         this.state = {
-            boxes : [
-                { idx :0 , checked : false , mark : undefined},
-                { idx :1 , checked : false , mark : undefined},
-                { idx :2 , checked : false , mark : undefined},
-                { idx :3 , checked : false , mark : undefined},
-                { idx :4 , checked : false , mark : undefined},
-                { idx :5 , checked : false , mark : undefined},
-                { idx :6 , checked : false , mark : undefined},
-                { idx :7 , checked : false , mark : undefined},
-                { idx :8 , checked : false , mark : undefined}
-            ],
-            turn : 'O',
-            clickCount : 0,
-            gameState : [
-                null,null,null,
-                null,null,null,
-                null,null,null
-            ],
             winCoundition : [
                 [0,1,2],
                 [3,4,5],
@@ -33,12 +15,14 @@ class TicTacToe extends Component{
                 [2,5,8],
                 [0,4,8],
                 [2,4,6]
-            ],
-            winner : undefined
+            ]
         }
     }
-
-    reset = () => {
+    componentWillMount(){
+        this.setInit()
+    }
+    
+    setInit = () => {
         this.setState({
             boxes : [
                 { idx :0 , checked : false , mark : undefined},
@@ -132,7 +116,7 @@ class TicTacToe extends Component{
                     ?
                     false
                     :
-                    <Popup winner={this.state.winner} reset={this.reset}></Popup>
+                    <Popup winner={this.state.winner} reset={this.setInit}></Popup>
                 }
             </Fragment>
         )
